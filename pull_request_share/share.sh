@@ -118,18 +118,14 @@ main () {
     echo "DEBUG -> action: $ACTION merged: $MERGED"
     echo "Pull Request number is ${NUMBER}"
 
-    #if [[ "$ACTION" != "closed" ]] || [[ "$MERGED" != "true" ]]; then
-    #    exit "$EXIT_CODE";
-    #fi
-    check_credentials
-    share_tweet ${NUMBER}
-
-    # Only interested in newly opened 
     # https://developer.github.com/v3/activity/events/types/#pullrequestevent
-    #if [[ "${MERGED}" == "false" ]]; then
-    #    check_credentials
-    #    share_tweet $NUMBER
-    #fi
+    if [[ "${MERGED}" == "true" ]]; then
+        check_credentials
+        share_tweet $NUMBER
+    else
+        echo "Pull Request is not Merged."
+        exit "$EXIT_CODE";
+    fi
 }
 
 echo "==========================================================================
