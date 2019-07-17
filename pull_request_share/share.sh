@@ -64,10 +64,10 @@ check_events_json() {
 
 share_tweet() {
 
-    PR_NUMBER=${1}
-    FILES_URL=${REPO_URL}/pulls/${GITHUB_SHA}/${PR_NUMBER}/files
+    PR_NUMBER="${1}"
+    FILES_URL=${REPO_URL}/pulls/${PR_NUMBER}/files
+    echo "Files URL is ${FILES_URL}"
     RESPONSE=$(get_url "${FILES_URL}")
-    echo $RESPONSE
 
     FILES=$(echo "${RESPONSE}" | jq --raw-output '.[] | {url: .raw_url, name: .name, status: .status} | @base64')
     echo $FILES
