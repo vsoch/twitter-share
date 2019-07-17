@@ -17,7 +17,7 @@ action "share button on merge" {
   secrets = ["GITHUB_TOKEN"]
   env = {
     MATCH_PATTERN = "*.png"
-    HASHTAGS = "#rseng #rsephenotype"
+    HASHTAG = "#rseng"
     CUSTOM_MESSAGE = "What is your RSE Phenotype? Here is mine!"
     DATA_URL = "https://www.github.com/vsoch/twitter-share"
     AT_UESRNAME = "@vsoch"
@@ -26,5 +26,5 @@ action "share button on merge" {
 ```
 
 By default, the pattern to be matched against files is `*.png`, and
-the message and hashtags aren't defined. The data url should be any URL you want
+the message and hashtag aren't defined. The data url should be any URL you want
 to share, and the AT_USERNAME should be the account you want to @.
