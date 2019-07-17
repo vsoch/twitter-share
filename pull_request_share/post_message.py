@@ -48,7 +48,7 @@ headers = {"Authorization": "token %s" % params['GITHUB_TOKEN'],
            "Accept": accept,
            "Content-Type": "application/json; charset=utf-8" }
 
-message = "<a class=\"twitter-share-button\" href='https://twitter.com/intent/tweet?button_hashtag=" + hashtags + " &text=\"" + custom_message + " " + links  + " " + at_username +  "\"&url=\"" + data_url + "\'>Share on Twitter</a>"
+message = "<a class=\"twitter-share-button\" href='https://twitter.com/intent/tweet?button_hashtag=" + hashtags + " &text=\"" + custom_message + " " + links  + " " + at_username +  " See: " + data_url + "\'>Share on Twitter</a>"
 
 message = message.replace('\n', ' ')
 
