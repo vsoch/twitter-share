@@ -1,7 +1,11 @@
 # Share Tweet with Link
 
 This action will allow you to share a Tweet with one or more files
-that are added and merged that match a pattern.
+that are added and merged that match a pattern. It doesn't create any fancy 
+link, but just gives the user text to copy paste when the pull request
+is merged:
+
+![img/example.png](img/example.png)
 
 Here is an example of what to put in your `.github/main.workflow` file to
 trigger the action.
