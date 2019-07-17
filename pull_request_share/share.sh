@@ -117,7 +117,7 @@ main () {
 
     echo "DEBUG -> action: $ACTION merged: $MERGED"
 
-    if [[ "$ACTION" != "closed" ]] || [[ "$MERGED" != "true" ]]; then
+    if [[ "$ACTION" != "closed" ]] || [[ "$MERGED" != "false" ]]; then
         exit "$EXIT_CODE";
     fi
 
