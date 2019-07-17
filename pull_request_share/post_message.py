@@ -48,7 +48,7 @@ headers = {"Authorization": "token %s" % params['GITHUB_TOKEN'],
            "Accept": accept,
            "Content-Type": "application/json; charset=utf-8" }
 
-message = '<a href="https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="large" data-text="' + custom_message + ' ' + ' ' + links + ' ' +  hashtags + '" data-url="' + data_url + '" data-related="' + at_username + '" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+message = '<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text="' + custom_message + ' ' + links + ' ' + hashtags + '"&url="' + data_url + '"&related="'+ at_username + '">Share on Twitter</a>'
 
 data = {"body": message }
 print(data)
