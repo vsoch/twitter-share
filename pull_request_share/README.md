@@ -20,7 +20,7 @@ action "share button on merge" {
     HASHTAG = "#rseng"
     CUSTOM_MESSAGE = "What is your RSE Phenotype? Here is mine!"
     DATA_URL = "https://www.github.com/vsoch/twitter-share"
-    AT_UESRNAME = "@vsoch"
+    AT_USERNAME = "@vsoch"
   }
 }
 ```
