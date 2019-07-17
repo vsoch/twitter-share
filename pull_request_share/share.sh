@@ -98,6 +98,8 @@ share_tweet() {
             export AUTH_HEADER HEADER COMMENTS_URL API_VERSION GITHUB_TOKEN MESSAGE_FILE HASHTAGS CUSTOM_MESSAGE 
             python3 /post_message.py
     else
+        echo "No files to share."
+    fi
 
 }
 
