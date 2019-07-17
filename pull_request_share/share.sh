@@ -120,13 +120,15 @@ main () {
     #if [[ "$ACTION" != "closed" ]] || [[ "$MERGED" != "true" ]]; then
     #    exit "$EXIT_CODE";
     #fi
+    check_credentials
+    share_tweet $NUMBER
 
     # Only interested in newly opened 
     # https://developer.github.com/v3/activity/events/types/#pullrequestevent
-    if [[ "${MERGED}" == "false" ]]; then
-        check_credentials
-        share_tweet $NUMBER
-    fi
+    #if [[ "${MERGED}" == "false" ]]; then
+    #    check_credentials
+    #    share_tweet $NUMBER
+    #fi
 }
 
 echo "==========================================================================
