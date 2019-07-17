@@ -99,7 +99,6 @@ share_tweet() {
             python3 /post_message.py
     else
 
-    fi
 }
 
 main () {
