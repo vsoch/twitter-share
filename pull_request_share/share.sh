@@ -123,7 +123,7 @@ main () {
 
     # Only interested in newly opened 
     # https://developer.github.com/v3/activity/events/types/#pullrequestevent
-    if [[ "${MERGED}" == "true" ]]; then
+    if [[ "${MERGED}" == "false" ]]; then
         check_credentials
         share_tweet $NUMBER
     fi
