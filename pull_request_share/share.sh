@@ -117,9 +117,9 @@ main () {
 
     echo "DEBUG -> action: $ACTION merged: $MERGED"
 
-    if [[ "$ACTION" != "closed" ]] || [[ "$MERGED" != "false" ]]; then
-        exit "$EXIT_CODE";
-    fi
+    #if [[ "$ACTION" != "closed" ]] || [[ "$MERGED" != "true" ]]; then
+    #    exit "$EXIT_CODE";
+    #fi
 
     # Only interested in newly opened 
     # https://developer.github.com/v3/activity/events/types/#pullrequestevent
