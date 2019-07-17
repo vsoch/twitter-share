@@ -69,7 +69,7 @@ share_tweet() {
     echo "Files URL is ${FILES_URL}"
     RESPONSE=$(get_url "${FILES_URL}")
 
-    FILES=$(echo "${RESPONSE}" | jq --raw-output '.[] | {url: .raw_url, name: .name, status: .status} | @base64')
+    FILES=$(echo "${RESPONSE}" | jq --raw-output '.[] | {url: .raw_url, name: .filename, status: .status} | @base64')
     echo $FILES
 
     SHARE_FILES=""
@@ -81,7 +81,7 @@ share_tweet() {
         echo "Checking file ${NAME}";
 
         if [[ "${STATUS}" == "added" ]]; then
-            echo "Found added file.";
+            echo "Found added file ${NAME}";
         fi
 
         # Does it match the pattern?
@@ -112,16 +112,17 @@ main () {
 
     # Get the name of the action that was triggered
     ACTION=$(jq --raw-output .action "${GITHUB_EVENT_PATH}");
-    NUMBER=$(jq --raw-output .number "${GITHUB_EVENT_PATH}")
-    MERGED=$(jq --raw-output .pull_request.merged "$GITHUB_EVENT_PATH")
+    NUMBER=$(jq --raw-output .number "${GITHUB_EVENT_PATH}");
+    MERGED=$(jq --raw-output .pull_request.merged "$GITHUB_EVENT_PATH");
 
     echo "DEBUG -> action: $ACTION merged: $MERGED"
+    echo "Pull Request number is ${NUMBER}"
 
     #if [[ "$ACTION" != "closed" ]] || [[ "$MERGED" != "true" ]]; then
     #    exit "$EXIT_CODE";
     #fi
     check_credentials
-    share_tweet $NUMBER
+    share_tweet ${NUMBER}
 
     # Only interested in newly opened 
     # https://developer.github.com/v3/activity/events/types/#pullrequestevent
