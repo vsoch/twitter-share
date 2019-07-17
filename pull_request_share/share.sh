@@ -17,7 +17,7 @@ EXIT_CODE=${NO_BRANCH_DELETED_EXIT_CODE:-78}
 
 # User Variables
 MATCH_PATTERN=${MATCH_PATTERN:-".png"}
-HASHTAG=${HASHTAG:-""}
+HASHTAGS=${HASHTAGS:-""}
 CUSTOM_MESSAGE=${CUSTOM_MESSAGE:-""}
 DATA_URL=${DATA_URL:-"https://www.github.com/vsoch/twitter-share"}
 AT_USERNAME=${AT_USERNAME:-""}
@@ -95,7 +95,7 @@ share_tweet() {
             MESSAGE_FILE=$(mktemp /tmp/twitter-share.XXXXXX)            
             COMMENTS_URL="${REPO_URL}/issues/${PR_NUMBER}/comments"
             echo "${SHARE_FILES}" > $MESSAGE_FILE
-            export AUTH_HEADER HEADER COMMENTS_URL API_VERSION GITHUB_TOKEN MESSAGE_FILE HASHTAG CUSTOM_MESSAGE AT_USERNAME
+            export AUTH_HEADER HEADER COMMENTS_URL API_VERSION GITHUB_TOKEN MESSAGE_FILE HASHTAGS CUSTOM_MESSAGE AT_USERNAME
             python3 /post_message.py
     else
         echo "No files to share."

@@ -26,7 +26,7 @@ for required in requireds:
     params[required] = value
 
 custom_message = os.environ.get('CUSTOM_MESSAGE', '')
-hashtags = os.environ.get('HASHTAG', '')
+hashtags = os.environ.get('HASHTAGS', '')
 data_url = os.environ.get('DATA_URL', 'https://www.github.com/vsoch/twitter-share')
 at_username = os.environ.get('AT_USERNAME', '')
 
@@ -48,9 +48,7 @@ headers = {"Authorization": "token %s" % params['GITHUB_TOKEN'],
            "Accept": accept,
            "Content-Type": "application/json; charset=utf-8" }
 
-message = "<a class=\"twitter-share-button\" href='https://twitter.com/intent/tweet?button_hashtag=" + hashtags + " &text=\"" + custom_message + " " + links  + " " + at_username +  " See: " + data_url + "\'>Share on Twitter</a>"
-
-message = message.replace('\n', ' ')
+message = "Share this on Twitter:\n" + custom_message + " " + links  + " " + hashtags + " " + at_username + "\n See: " + data_url
 
 data = {"body": message}
 print(data)
