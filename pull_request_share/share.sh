@@ -95,7 +95,7 @@ share_tweet() {
             MESSAGE_FILE=$(mktemp /tmp/twitter-share.XXXXXX)            
             COMMENTS_URL="${REPO_URL}/issues/${PR_NUMBER}/comments"
             echo "${SHARE_FILES}" > $MESSAGE_FILE
-            export AUTH_HEADER HEADER COMMENTS_URL API_VERSION GITHUB_TOKEN MESSAGE_FILE HASHTAG CUSTOM_MESSAGE 
+            export AUTH_HEADER HEADER COMMENTS_URL API_VERSION GITHUB_TOKEN MESSAGE_FILE HASHTAG CUSTOM_MESSAGE AT_USERNAME
             python3 /post_message.py
     else
         echo "No files to share."
