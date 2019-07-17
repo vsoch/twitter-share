@@ -6,4 +6,5 @@ hashtags, and a regular expression can be used to match files shared.
 
  - [Share Pull Request Image](pull_request_share): Share a pull request image.
 
-See the README.md in each subfolder for usage.
+See the README.md in each subfolder for usage. An example is provide
+[here](https://github.com/vsoch/rse-phenotypes).

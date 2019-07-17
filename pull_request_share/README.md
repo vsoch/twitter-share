@@ -13,7 +13,7 @@ workflow "share tweet button" {
 }
 
 action "share button on merge" {
-  uses = "vsoch/twitter-share/pull_request_share@master"
+  uses = "vsoch/twitter-share-action/pull_request_share@master"
   secrets = ["GITHUB_TOKEN"]
   env = {
     MATCH_PATTERN = "*.png"
